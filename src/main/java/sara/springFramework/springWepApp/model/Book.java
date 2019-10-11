@@ -14,11 +14,6 @@ public class Book {
   private String title;
 
   @OneToOne
-  @JoinTable(
-      name = "publisher_book",
-      joinColumns = @JoinColumn(name = "book_id"),
-      inverseJoinColumns = @JoinColumn(name = "publisher_id")
-  )
   private Publisher publisher;
   private String isbn;
 

@@ -13,9 +13,7 @@ public class Publisher {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String name;
-
-  @OneToOne(mappedBy = "publisher")
-  private Book book;
+  private String address;
 
   public Publisher() {
   }
@@ -24,9 +22,9 @@ public class Publisher {
     this.name = name;
   }
 
-  public Publisher(String name, Book book) {
+  public Publisher(String name, String address) {
     this.name = name;
-    this.book = book;
+    this.address = address;
   }
 
   public String getName() {
@@ -37,12 +35,12 @@ public class Publisher {
     this.name = name;
   }
 
-  public Book getBook() {
-    return book;
+  public String getAddress() {
+    return address;
   }
 
-  public void setBook(Book book) {
-    this.book = book;
+  public void setAddress(String address) {
+    this.address = address;
   }
 
   public Long getId() {
@@ -71,7 +69,7 @@ public class Publisher {
     return "Publisher{" +
         "id=" + id +
         ", name='" + name + '\'' +
-        ", book=" + book +
+        ", address=" + address +
         '}';
   }
 }
